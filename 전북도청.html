@@ -1,0 +1,865 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<head>
+
+
+<title>전라북도 공공생활정보지도</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge" />
+
+
+<!-- 웹 컨텍스트명 -->
+<script type="text/javascript">
+	var contextPath = "";
+</script>
+<script type="text/javascript" src="/js/google-analytics.js"></script>
+<!-- CSS 불러오기 -->
+<link type="text/css" href="../css/default.css" rel="stylesheet">
+<link type="text/css" href="../css/bootstrap-slider.min.css" rel="stylesheet">
+<link type="text/css" href="../css/jquery-ui-slider-pips.css" rel="stylesheet">
+<link type="text/css" href="../css/jquery.range.css" rel="stylesheet">
+<link type="text/css" href="../css/style.css" rel="stylesheet">
+<link type="text/css" href="../css/loading.css" rel="stylesheet">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.
+
+">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="../css/default.css" rel="stylesheet" type="text/css">
+<link href="../css/file-explore.css" rel="stylesheet" type="text/css">
+<link href="../css/spectrum.css" rel="stylesheet" type="text/css">
+<link href="../css/layout.css" rel="stylesheet" type="text/css">
+<!-- 슬라이더때문에 추가 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<style>
+.olControlScaleLineTop {margin-bottom:30px;}
+/*#menu2 {margin-top:30px;}*/
+</style>
+<!-- 추가 추가 -->
+<!-- <script type="text/javascript" src="/js/map/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/map/file-explore.js"></script>
+<script type="text/javascript" src="../js/map/jquery-ui-slider-pips.js"></script>
+<script type="text/javascript" src="../js/map/jquery.range-min.js"></script>
+<script type="text/javascript" src="../js/map/script.js"></script> -->
+
+<!-- Proj4js -->
+<script type="text/javascript"
+	src="/extLib/Proj4js/proj4js-compressed.js"></script>
+<script type="text/javascript"
+	src="/extLib/Proj4js/defs/ginno.js"></script>
+<!-- OpenLayers -->
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers2.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Class.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Util.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Util/vendorPrefix.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Animation.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Bounds.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Date.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Element.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/LonLat.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Pixel.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/BaseTypes/Size.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Tween.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Events.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Request.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Request/XMLHttpRequest.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Projection.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Map.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Icon.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Marker.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Marker/Box.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Popup.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Tile.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Tile/Image.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Tile/Image/IFrame.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Tile/UTFGrid.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Image.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/EventPane.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/FixedZoomLevels.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/HTTPRequest.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Grid.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Markers.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Text.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/WMS.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/WMTS.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Boxes.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/TMS.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/TileCache.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Zoomify.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Popup/Anchored.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Popup/Framed.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Popup/FramedCloud.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Feature.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Feature/Vector.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Click.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Hover.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Point.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Path.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Polygon.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Feature.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Drag.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Pinch.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/RegularPolygon.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Box.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/MouseWheel.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Handler/Keyboard.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Attribution.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Button.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Zoom.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/DragPan.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/PinchZoom.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/PanZoom.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/PanZoomBar.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/control.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Panel.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/SelectFeature.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Nav.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Measure.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/WMSGetFeatureInfo.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/TransformFeature.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/UTFGrid.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Zoom.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/Collection.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/Point.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/MultiPoint.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/Curve.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/LineString.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/LinearRing.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Geometry/Polygon.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Renderer.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Renderer/Elements.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Renderer/Canvas.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/Vector.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Layer/PointGrid.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Filter.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Filter/Filter.min.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Protocol.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Protocol/HTTP.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Style.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Style2.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/StyleMap.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Rule.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/XML.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/XML/VersionedOGC.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Context.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/GML.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/GML/Base.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/GML/v3.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Atom.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WFS.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WMSDescribeLayer.js"></script>
+<script type="text/javascript"
+
+src="/extLib/openlayers/OpenLayers/Format/WMSDescribeLayer/v1_1.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/GPX.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Filter.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Filter/v1.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Filter/v1_1_0.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Text.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/JSON.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WMSCapabilities.js"></script>
+<script type="text/javascript"
+
+src="/extLib/openlayers/OpenLayers/Format/WMSCapabilities/v1_3_0.js"></script>
+
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WMSGetFeatureInfo.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/GetFeature.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/PanPanel.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Control/Pan.js"></script>
+<script type="text/javascript" src="/extLib/openlayers/OpenLayers/Symbolizer.min.js"></script>
+
+<!-- GMap -->
+<script type="text/javascript"
+	src="/extLib/ginno/gmap/GMap.js"></script>
+<script type="text/javascript"
+	src="/extLib/ginno/gutil/GError.js"></script>
+<script type="text/javascript"
+	src="/extLib/ginno/gutil/GUtil.js"></script>
+<script type="text/javascript"
+	src="/extLib/ginno/gmap/lib/gtool/GSaveTool.js"></script>
+
+<!-- 새로만드는 js -->
+<script type="text/javascript"
+	src="/js/map/map6.js"></script>
+	<script type="text/javascript" src="https://sgisapi.kostat.go.kr/OpenAPI3/auth/javascriptAuth?
+
+consumer_key=ae3fbf999e9746f7ba5b"></script>
+<script type="text/javascript"
+	src="/js/map/TimeSeries.js"></script>
+
+
+<!-- 디자인관련 js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/js/jquery-1.4.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!--
+<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+-->
+<script type="text/javascript" 	src="/js/map/bootstrap-slider.min.js"></script>
+<script type="text/javascript" 	src="/js/map/file-explore.js"></script>
+<script type="text/javascript" 	src="/js/map/html5shiv.js"></script>
+<script type="text/javascript" 	src="/js/map/jquery.range-min.js"></script>
+<script type="text/javascript" 	src="/js/map/jquery-ui.min.js"></script>
+<script type="text/javascript" 	src="/js/map/jquery-ui-slider-pips.js"></script>
+<script type="text/javascript" 	src="/js/map/respond.min.js"></script>
+<script type="text/javascript" 	src="/js/map/script.js"></script>
+<script type="text/javascript" 	src="/js/map/script.main.js"></script>
+<script type="text/javascript" 	src="/js/map/spectrum.js"></script>
+<script type="text/javascript" 	src="/js/map/swiper.min.js"></script>
+
+
+<!-- 지도기능관련 js -->
+
+<script type="text/javascript"
+	src="/js/map/juso_search.js"></script>
+<script type="text/javascript"
+	src="/js/map/MapVectorEvent.js"></script>
+<script type="text/javascript"
+	src="/js/map/TransferparcelsEvent.js"></script>
+<script type="text/javascript"
+	src="/js/map/MapRequestEvent.js"></script>
+<script type="text/javascript"
+	src="/js/map/MapUtilEvent.js"></script>
+<script type="text/javascript"
+	src="/js/map/HeatmapLayer.js"></script>
+<script type="text/javascript"
+	src="/js/map/heatmap_test.js"></script>
+<script type="text/javascript"
+	src="/js/map/MapAnaly.js"></script>
+
+<!-- jQuery -->
+<!-- <script type="text/javascript" src="/extLib/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/extLib/jquery/jquery-1.10.2.min.js"></script>-->
+<!-- <script type="text/javascript" src="/extLib/jquery-ui/jquery-ui.js"></script>-->
+<!-- <script src="../js/file-explore.js"></script> -->
+<!--  <script type="text/javascript" src="/js/map/jquery-ui-slider-pips.js"></script>-->
+<!-- <script src="../js/spectrum.js"></script> -->
+
+<!-- script type="text/javascript" src="//openapi.map.naver.com/openapi/v3/maps.js?clientId=Hu_LZxDoO_JKjkEeF7uj"></script-->
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=nmr5kkpzr5"></script>
+<script type="text/javascript" src="//map.vworld.kr/js/apis.do?type=Base&apiKey=2EFC2323-1330-35DA-96BA-7811C3462320"></script>
+<!--<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=7f8286fa6a34549cba56ac5c54687787&libraries=services"></script>-->
+ <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0189feda021a82049ad54b80de092e83&libraries=services"></script>
+<!--<script type="text/javascript" src="//openapi.map.naver.com/openapi/v2/maps.js?clientId=cAme3GfvQ3hhXAXyK5yO"></script>-->
+
+
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+
+<!-- 기상청 -->
+<script type="text/javascript" src="/js/map/weather.js"></script>
+
+<script type="text/javascript">
+
+ $(document).ready(function(){
+	testinit();
+});
+
+
+ 	//$(document).ready(sizeContent);
+	//$(window).resize(sizeContent);
+	//$(document).ready(tab_func);
+	//$(document).ready(pop_draggable);
+	$(document).ready(function() {
+		$('.slider-icon-opacity').slider(); //2018슬라이더
+	});
+
+
+	$(document).ready(function() {
+		$('#selectlist').selectmenu();
+
+	});
+
+
+	/* 왼쪽 검색 및 지도목록 창 관련 스크립트 */
+	$(function() {
+		$("#search").tabs();
+	});
+
+	/* 마우스 우클릭 방지 */
+	/* document.oncontextmenu = function() {
+		return false;
+	}; */
+
+	$(window).load(function() {
+
+		fn_init();
+	});
+
+
+
+	$(function() {
+		$(".q").focus(function() {
+			$(this).val('');
+		}).blur(function() {
+			if ($(this).val() == "") {
+				$(this).val("ex)문화축제, 도서관위치, [지번/도로명]");
+			}
+		});
+	});
+	function statistics()
+	{
+		 var browser = navigator.userAgent.toLowerCase();
+		 var text = "";
+
+		 if ( -1 != browser.indexOf('chrome') ){
+
+			 con_url = "/SGIS.do";
+	          //con_url = "../Outsidemap/statistics.aspx?tX="+ valX +"&tY="+valY;
+	          popUp = window.open(con_url, '통계자료','toolbar=no,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=870px,height=650px,left=120, right=100');
+	          //popUp = window.open("http://www.naver.com", '통계자료', '_blank','toolbar=no,location=yes,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=800,height=920');
+	          popUp.focus()
+
+		 }else if(-1 != browser.indexOf('trident')){
+
+			 con_url = "/SGIS.do";
+	          //con_url = "../Outsidemap/statistics.aspx?tX="+ valX +"&tY="+valY;
+	          popUp = window.open(con_url, '통계자료','toolbar=no,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=870px,height=590px,left=120, right=100');
+	          //popUp = window.open("http://www.naver.com", '통계자료', '_blank','toolbar=no,location=yes,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=800,height=920');
+	          popUp.focus()
+
+		 }
+
+	};
+
+
+
+</script>
+
+</head>
+<body>
+
+
+	<div class="map-cnt-body" id="map" style="z-index: 99"></div>
+	<div id="naverMap" class="map" style="width: 100%; height: 100%;"></div>
+	<div id="daumMap" class="map" style="width: 100%; height: 100%; "></div>
+	<div id="vworldMap" class="map" style="width: 100%; height: 100%; "></div>
+	<div id="roadviewMap" class="map" style="z-index: 110; "></div>
+
+
+	<div id="wrapper">
+
+		<div class="wrap-body-top"
+		style='position: absolute; left: 0; top: 0px; border-right: 1px solid #dcdcdc; width: 100%; z-index: 100000; background:#fff; overflow: hidden;'>
+		<h1>
+			<a href="../"><img src="../img/logo.jpg" alt="정읍시"> <span>공공생활정보지도</span></a>
+		</h1>
+		<div class="top-search">
+			<div class="tab-frm">
+				<fieldset>
+					<legend>검색폼 </legend>
+					<div class="search">
+					<p>
+
+						<span class="wid-75"> <input placeholder="예) 문화재"
+							type="text" name="q" id="q"
+							onkeypress="if(event.keyCode=='13'){ajax_init();}">
+						</span> <span class="wid-25"> <a class="search-bts full-wid"
+							onclick="ajax_init();"></a>
+						</span>
+					</p>
+					</div>
+
+				</fieldset>
+			</div>
+
+
+		</div>
+
+		<div class="location-top">
+			<ul>
+
+				<li id="nmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(4, 'nmap');">NAVER</span>
+				</li>
+				<li id="dmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(3, 'dmap');">DAUM</span>
+				</li>
+				<li id="vmap" style="display: none;">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="">VWORLD</span>
+				</li>
+				<li id="rmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(2, 'rmap');">로드뷰</span>
+				</li>
+				<li id="smap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(1, 'smap');">항공</span>
+				</li>
+
+			</ul>
+		</div>
+
+	<ul class="weather-block">
+			<li><div id="weather-info" class="weather-info">
+
+						</div></li>
+		</ul>
+	</div>
+
+
+	<div class="map-body-top">
+		<div class="location-dong"  style="z-index: 9999; ">
+			<span>전라북도</span> <span id="local-position" onclick="javascript:sigunlist();" >전주시</span><br/>
+			<div id="sigun"></div>
+			<input type="text" value="전주시" id="label" style="display:none"/>
+		</div>
+	</div>
+
+		<div class="map-cnt-body" id="map1" >
+			<span class="map-name">기준맵</span>
+			<div class="land-info">
+				<i></i>
+				<div class="land-location">
+					<h2>전라북도 전주시 완산구 효자로 225</h2>
+					<a class="info-view pop-open" data-pop="2">토지정보</a>
+				</div>
+			</div>
+		</div>
+		<div class="map-cnt-body" id="map2">
+			<span class="map-name">서브맵</span>
+		</div>
+
+		<div class="map-bottom" style=" z-index: 9999;">
+		<div id="gis-view" style="display: none;">
+			<div class="view-top">
+				<span class="sel_list">공공생활정보지도 목록</span>
+				<select name="" id="gisAna_selList" onchange="changeMapAnalyList(this.value)">
+				</select>
+			</div>
+			<div class="view-bottom">
+				<ul>
+					<li>
+						<input class="view-bottominput" id="ck1" type="checkbox">
+						<label for="ck1">
+							<img alt="" src="../img/gis1.jpg" />
+							<span class="view-bottom-title">
+								<i></i> 밀도
+							</span>
+						</label>
+					</li>
+					<li>
+						<input class="view-bottominput" id="ck2" type="checkbox">
+						<label for="ck2">
+							<img alt="" src="../img/gis1.jpg">
+							<span class="view-bottom-title">
+								<i></i> 분포
+							</span>
+						</label>
+					</li>
+					<li>
+						<input class="view-bottominput" id="ck3" type="checkbox">
+						<label for="ck3">
+							<img alt="" src="../img/gis2.jpg">
+							<span class="view-bottom-title">
+								<i></i> 핫스팟
+							</span>
+						</label>
+					</li>
+				</ul>
+			</div>
+			<div class="view-button">
+				<button onclick="summary();">GIS 분석</button>
+			</div>
+		</div>
+		<div id="time-view" style="display: none;">
+			<div class="view-top" >
+				<span>목록</span>
+				<select id="time-series-list" name="time_series_list">
+					<option value="">전주시 공시지가</option>
+				</select>
+				<a href="#" onclick="javascript:window.open('../extLib/slideshow/demo.html','_blank','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=700, height=700');" class="time-bt">시계열조회</a>
+			</div>
+		</div>
+	</div>
+
+							<div class="result" id="layerList"></div>
+
+				<!-- left menu 움직임버튼 -->
+				<div class="gnb_tbt1"></div>
+				<div class="gnb_tbt2"></div>
+				<!-- //left menu 움직임버튼 -->
+
+
+			</div>
+
+		<div class="map-menu" id="maplist_menu" style="height: 949px;z-index: 9999;left: 0px;position: absolute;">
+			<ul>
+				<li><a href="#" onclick="javascript:layer_category2('C18', '사회복지', 'menu0');" class="menu-1"><span>사회복지</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C16', '문화관광', 'menu1');" class="menu-2"><span>문화관광</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C13', '교육', 'menu2');" class="menu-3"><span>교육</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C21', '문화관광', 'menu3');" class="menu-4"><span>공공행정</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C17', '보건의료', 'menu4');" class="menu-5"><span>보건의료</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C31', '식품건강', 'menu5');" class="menu-6"><span>식품건강</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C11', '재난안전', 'menu6');" class="menu-7"><span>재난안전</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C19', '산업고용', 'menu7');" class="menu-8"><span>산업고용</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C15', '농축수산', 'menu8');" class="menu-9"><span>농축수산</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C22', '부동산', 'menu9');" class="menu-10"><span>부동산</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C20', '교통물류', 'menu10');" class="menu-11"><span>교통물류</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C12', '과학기술', 'menu11');" class="menu-12"><span>과학기술</span></a></li>
+				<li><a href="#" onclick="javascript:layer_category2('C25', '환경기상', 'menu12');" class="menu-13"><span>환경기상</span></a></li>
+			</ul>
+		</div>
+
+
+	<!-- 주소검색 -->
+	<!-- 주소검색 초기화면 (결과 5개만 표출) -->
+	<div class="tab_sub1" id="juso_list1"
+		style="height: 100%; width: 349px; z-index: 9999; position: absolute; left: 65px; top: 60px; display: block; background-color: rgb(255, 255, 255);display:none;">
+		<div class="">
+			<div class="box">
+				<div class="all-s-top">
+					<h2>
+						<span id="search_title"></span>
+					</h2>
+					<p class="close_x_tab">
+						<img src="../img/btn_x.png" alt="닫기">
+					</p>
+				</div>
+				<div class="shrs">
+					<div class="rsnum" id="poi_rsnum1"></div>
+					<div class="tab_menu2" style="float: right; cursor: pointer; margin: 10px 10px 10px 10px;" onclick="javascript:ajax_research();">더보기</div>
+				</div>
+				<div class="list" id="poi_list1">
+					<ul>
+						<li><p class="title"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="box" id="box_id"><!-- 공공생활정보지도 검색결과부분 -->
+				<div class="shrs">
+					<div class="stitle" style="padding: 10px 10px 10px 10px; background-color: #f5f5f5;border-bottom: 1px solid #dcdcdc;">
+						<span class="rsnum" id="search_gong_title"></span>
+					</div>
+					 <div class="rsnum" id="map_rsnum1"></div>
+				</div>
+				<div class="list" id="map_list1">
+				 </div>
+			</div><!--box-->
+		</div><!--tab_con-->
+	</div><!--tab_sub1-->
+
+				<!-- 명칭 더보기 눌렀을때 -->
+				<div class="tab_sub2" id="juso_list2" style="overflow-y: scroll;height: 94%;width: 349px;z-index: 9999;position: absolute;left: 65px;top: 60px;display: none;background-color: rgb(255, 255, 255);">
+		<div class="tab_con" style="height: 829px;">
+						<div class="box" >
+							<div class="shrs">
+								<div class="stitle" style="position: relative;background-color: #f5f5f5;border-bottom: 1px solid #dcdcdc; height: 36px; font-size: 15px; font-weight: 400;" >
+									<span id="search_title2" style=" position: absolute;font-size: 15px;left: 15px;top: 8px;font-weight: 400;"></span>
+									<p class="close_x_tab2" style="position: absolute;cursor: pointer; right: 10px;top: 8px;">
+						<img src="../img/btn_x.png" alt="닫기">
+					</p>
+								</div>
+								<div class="rsnum" id="poi_rsnum2"></div>
+							</div>
+							<div class="list" id="poi_list2"></div>
+
+							<div id="pagination"></div>
+						</div>
+						<div class="box">
+							<div class="shrs">
+								<div class="stitle">
+									<span>공공생활정보지도</span> 검색결과
+								</div>
+								<div class="rsnum" id="map_rsnum2"></div>
+							</div>
+							<div class="list" id="map_list2"></div>
+						</div>
+					</div>
+				</div>
+
+	<div class="map-contents" style="z-index: 9999;">
+			<div class="all-search result-juso" data-sch="'+ index +'" >
+			<div class="all-s-top">
+				<h2>
+				   <span id="title"></span>
+				</h2>
+					<p>
+					<img src="../img/btn_x.png" alt="닫기">
+					</p>
+				</div>
+				<div class="all-s-result">
+					<div class="all-s-result-list-block"></div>
+				</div>
+			</div>
+
+	</div>
+	<div class="pop-box pop-top pop-box-center pop-box67 draggable-box" id="kras_content" data-pop="2">
+		<p class="title">토지정보조회</p>
+		<div class="common-tab26">
+			<p class="caution-box2">전라북도 부동산 정보를 제공합니다.</p>
+		<p class="caution-box">※ 본 자료는 제공이 불가능하며 열람용도로만 사용이 가능합니다. 또한 부동산 계약 등 법적인 용도로 사용이 불가능합니다.</p>
+			<ul>
+				<li><a data-tab="1">기본정보</a></li>
+				<li><a data-tab="2">토지정보</a></li>
+				<li><a data-tab="3">건축물대장</a></li>
+				<li><a data-tab="4">토지이용계획</a></li>
+				<li><a data-tab="5">개별공시지가</a></li>
+				<li><a data-tab="6">부동산거래정보</a></li>
+			</ul>
+		</div>
+		<div class="visible-ttl" data-tab="1" >
+			<div class="padding-ttl">
+				<table class="table_border1">
+					<colgroup>
+						<col />
+						<col width="14.28%">
+						<col width="14.28%">
+						<col width="14.28%">
+						<col width="14.28%">
+						<col width="14.28%">
+						<col width="14.28%">
+					</colgroup>
+					<tbody id="base_info">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="visible-ttl" data-tab="2">
+			<div class="padding-ttl">
+				<table class="table_border1">
+					<colgroup>
+						<col width="15%">
+						<col width="15%">
+						<col />
+					</colgroup>
+					<tbody id="togi_info">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="visible-ttl" data-tab="3">
+			<div class="padding-ttl">
+				<table class="table_border1 td-center">
+					<colgroup>
+						<col width="20%">
+						<col width="20%">
+						<col width="20%">
+						<col width="20%">
+						<col width="20%">
+					</colgroup>
+					<tbody id="gun_info">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="visible-ttl" data-tab="4">
+			<div class="padding-ttl">
+				<table class="table_border1">
+					<colgroup>
+						<col width="23%">
+						<col width="23%">
+						<col />
+					</colgroup>
+					<tbody id="togi_plan">
+					</tbody>
+				</table>
+				<br />
+				<p class="ico-title">토지이용계획도면</p>
+				<div class="info-box1" id="togi_plan_page">
+<!-- 					<p>
+					</p> -->
+				</div>
+			</div>
+		</div>
+		<div class="visible-ttl" data-tab="5">
+			<div class="padding-ttl">
+				<table class="table_border1 td-center">
+					<colgroup>
+						<col width="40%">
+						<col />
+					</colgroup>
+					<tbody id="gonsi">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="visible-ttl" data-tab="6">
+			<div class="padding-ttl">
+				<table class="table_border1">
+					<colgroup>
+						<col width="25%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>*매물종류</th>
+							<td>
+								<input type="radio" id="sale1" name="for-sale" checked="checked"><label for="sale1"><i></i> 매매</label>
+								<input type="radio" id="sale2" name="for-sale"><label for="sale2"><i></i> 전세</label>
+								<input type="radio" id="sale3" name="for-sale"><label for="sale3"><i></i> 월세</label>
+							</td>
+						</tr>
+						<tr>
+							<th>*기준년도</th>
+							<td>
+								<select>
+									<option>2018년</option>
+									<option>2017년</option>
+									<option>2016년</option>
+									<option>2015년</option>
+								</select>
+								<select>
+									<option>1분기</option>
+									<option>2분기</option>
+									<option>3분기</option>
+									<option>4분기</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>*매매가</th>
+							<td>
+								<select>
+									<option>전체</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th>*면 적</th>
+							<td>
+								<select>
+									<option>전체</option>
+								</select>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<img src="../img/bt_search_ilsasil.png" id="searchSale" style="margin-left: 60px;margin-left: 60px;cursor: pointer;flat: right;float: right;margin: 5px 5px 5px 5px; cursor: pointer;" alt="검색" onclick="javascript:fn_searchSale();">
+				<br />
+				<table class="table_border1 td-center">
+					<colgroup>
+						<col width="25%">
+						<col width="25%">
+						<col width="25%">
+						<col width="25%">
+					</colgroup>
+					<tbody id="budongsan">
+						<tr>
+							<th>거래일</th>
+							<th>층정보</th>
+							<th>면적(㎥)</th>
+							<th>금액(만원)</th>
+						</tr>
+						<tr>
+							<td colspan="4">거래내역이 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<p class="close_x">
+			<img src="../img/btn_x1.png" alt="닫기">
+		</p>
+	</div>
+
+	<div class="map-icons" style="z-index: 9999;">
+		<ul>
+			<li><a data-icon="1" onClick="javascript:fn_measureControl('prev');" ><span>이전</span></a></li>
+			<li><a data-icon="2" onClick="javascript:fn_measureControl('next');"><span>이후</span></a></li>
+		    <li><a data-icon="3" onClick="javascript:fn_measureControl('distance');"  ><span>거리</span></a></li>
+			<li><a data-icon="4" onClick="javascript:fn_measureControl('area');"><span>면적</span></a></li>
+			<li><a data-icon="5" onClick="javascript:fn_measureControl('initialize');"><span>초기화</span></a></li>
+			<li><a data-icon="6" onClick="javascript:fn_measureControl('print');"><span>인쇄</span></a></li>
+			<li><a data-icon="7" onClick="javascript:fn_measureControl('timeSeries');"><span>시계열조회</span></a></li>
+			<li><a data-icon="8" onClick="javascript:fn_measureControl('gisAnalysis');"><span>GIS분석</span></a></li>
+			<li><a data-icon="9" onClick="javascript:asdasd1();"><span>토지정보</span></a></li>
+
+			<li class="top-line">
+				<div class="zooming-map">
+					<button class="zoom-plus" onclick="javascript:fn_zoomin();">
+						<i class="fa fa-plus"></i>
+					</button>
+					<div class="slider-map-zoom" id="slider_action" onclick="javascript:fn_slider_bar()"></div>
+					<input type="hidden" id="map-scale" value="0">
+					<button class="zoom-minus" onclick="javascript:fn_zoomout();">
+						<i class="fa fa-minus"></i>
+					</button>
+				</div>
+			</li>
+
+			<li class="top-line"><a data-icon="10"><span>현재지도목록</span></a>
+
+			</li>
+
+		</ul>
+	</div>
+<!-- 	<div class="pop-box pop-top pop-box-center pop-box-download">
+		<p class="title">Data Download</p>
+		<div class="downloading-progress"></div>
+	</div>
+	<div class="pop-box pop-top pop-box-center pop-loader loading-box">
+		<div class="loading-img"></div>
+		<h1>잠시 기다려주십시오.</h1>
+	</div>
+	<div class="pop-box pop-top pop-box-center pop-loader progress-box">
+		<div class="progress-img"></div>
+		<h1>잠시 기다려주십시오.</h1>
+	</div> -->
+	<div id="view-group-icons" class="pop-box pop-top pop-box20"data-pop="1" style="display:none">
+		<div class="enableLayer" id="enableLayer">
+			<p class="title">현재지도정보</p>
+			<div class="visible-ttl">
+					<div class="enableLayerList" id="enableLayerList"></div>
+				<p class="close_x2" id="enableLayerOffBt"onclick="javascript:fn_enableLayerClose(); return false;">
+					<img src="../img/btn_x1.png" alt="닫기">
+				</p>
+				<p id="enableLayerOnBt" onclick="javascript:fn_enableLayerOpen(); return false;"></p>
+
+			</div>
+		</div>
+	</div>
+
+		<!-- 속성정보 조회 -->
+		<div class="pop_2" id="attr_info_div" style="display: none;">
+			<div class="pop_drag" id="drag0">
+
+				<div class="pop_title_property" id="attr_info_title">
+					<img src="../img/bt_close2.png" alt="닫기" class="close_pop" />
+					<div id="attr_info_title_con">▶ 속성정보</div>
+				</div>
+			</div>
+			<div class="pop_box_property">
+				<div class="tabli_con_property">
+					<div id="pop_tab_list" class="pop_tab_property">
+						<table>
+							<tbody id="pop_tab_list_content">
+							</tbody>
+						</table>
+					</div>
+					<div class="pop_tab_property">
+						<div class="property_sub1">
+							<table style="width: 100%">
+								<tbody id="attr_info_content">
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //wrapper -->
+		<!-- 20190124 추가 -->
+		<input type="checkbox" value="" id="obj2" name="_t" alt="" style="display:none;"/>
+</body>
+</html>
