@@ -1,0 +1,231 @@
+@charset "UTF-8";
+html{overflow:hidden}
+body{background:#fff}
+#map{bottom:0;left:0;right:0;position:absolute;overflow:hidden;min-width:980px}
+div.map{bottom:0;left:0;right:0;position:absolute;overflow:hidden;min-width:980px}
+#wrapper{/*width:100%;min-width:1200px;overflow:hidden*/}
+
+/* header */
+#wrapper #header{width:100%;height:69px;border-bottom:2px solid #054AA8;background:url(../img/bg_top.gif) left top no-repeat}
+#wrapper #header .logo{width:300px;height:57px;margin-top:12px;background:url(../img/logo_main.gif) no-repeat;float:left}
+#wrapper #header .search{width:306px;padding-top:22px;float:left}
+#wrapper #header .search input{width:220px;padding:0 10px;height:26px;line-height:26px;border:4px solid #054AA8}
+#wrapper #header .search img{cursor:pointer}
+#wrapper #header .list{width:73px;padding-top:22px;float:left}
+#wrapper #header .list img{cursor:pointer}
+#wrapper #header .list1{width:73px;padding-top:22px;float:left}
+#wrapper #header .list1 img{cursor:pointer}
+#wrapper #header .list2{width:73px;padding-top:22px;float:left}
+#wrapper #header .list2 img{cursor:pointer}
+#wrapper #header .list3{width:73px;padding-top:22px;float:left}
+#wrapper #header .list3 img{cursor:pointer}
+#wrapper #header .research{height:34px;padding-top:22px;float:left;font:normal 120% "Nanum Gothic","나눔 고딕","맑은 고딕",돋움,dotum;position:relative;display:inline-block;line-height:34px}
+#wrapper #header .research checkbox{cursor:pointer}
+
+/* container */
+#wrapper #container{width:100%;position:absolute;top:0;left:0}
+#wrapper #container .con_left{width:300px;height:500px;border-right:1px solid #054AA8;background:#EBEBEB;-webkit-box-shadow:2px 0 3px rgba(0,0,0,.3);-moz-box-shadow:2px 0 3px rgba(0,0,0,.3);box-shadow:2px 0 3px rgba(0,0,0,.3);position:absolute;left:0;top:71px;z-index:999}
+#wrapper #container .con_left .title{padding:17px 0 12px 45px;background:url(../img/ic_guide.png) 10px 10px no-repeat;font-size:1.3em;color:#000;font-weight:700}
+#wrapper #container .con_left .menu li{float:left}
+#wrapper #container .con_left .result{width:268px;margin:15px;font-size:1.2em;background:#fff;border:1px solid #D4D4D4;float:left;position:relative;overflow-y:auto;overflow-x:hidden}
+#wrapper #container .con_left .result li{padding:10px;border-bottom:1px solid #f7f7f7}
+#wrapper #container .con_left .result li input{padding-right:5px}
+#wrapper #container .con_left .result li img{padding:3px 0 0 18px}
+#wrapper #container .gnb_tbt1{width:21px;height:50px;position:absolute;left:300px;top:300px;cursor:pointer;background:url(../img/bt_close1.png) 0 0 no-repeat;z-index:999}
+#wrapper #container .gnb_tbt2{width:21px;height:50px;position:absolute;left:300px;top:200px;cursor:pointer;background:url(../img/bt_open1.png) 0 0 no-repeat;display:none;z-index:999}
+
+/* container left */
+.tab_sub2,.tab_sub3,.tab_sub4{display:none}
+#wrapper #container .con_left .tab_menu li{width:74px;padding:7px 0;background:#bebdbd;border-right:1px solid #a3a2a2;border-bottom:1px solid #a3a2a2;color:#fff;font-size:1.2em;font-weight:700;text-align:center;cursor:pointer;float:left}
+#wrapper #container .con_left .tab_menu .on{background:#ebebeb;color:#000;border-bottom:0}
+#wrapper #container .con_left .tab_con{width:300px;overflow-y:auto;overflow-x:hidden;z-index:9999}
+#wrapper #container .con_left .tab_con .box{width:278px;margin:10px 0 0 10px;background:#fff;border:1px solid #d4d4d4;float:left}
+#wrapper #container .i.weather-iconscon_left .tab_con .box .shrs{width:248px;padding:10px;margin:5px;background:#ebebeb;font-size:1.2em;display:inline-block}
+#wrapper #container .con_left .tab_con .box .shrs .stitle{float:left}
+#wrapper #container .con_left .tab_con .box .shrs .stitle span{font-weight:700}
+#wrapper #container .con_left .tab_con .box .shrs .rsnum{width:100px;text-align:right;color:#000;font-weight:700;float:left}
+#wrapper #container .con_left .tab_con .box .shrs .rsnum span{font-weight:400;color:#666}
+#wrapper #container .con_left .tab_con .box .list{margin-top:5px;font-size:1.2em;line-height:1.8em}
+#wrapper #container .con_left .tab_con .box .list li{padding:5px;margin:0 5px;border-bottom:1px solid #e0e0e0}
+#wrapper #container .con_left .tab_con .box .list li p img{padding-right:5px}
+#wrapper #container .con_left .tab_con .box .list li p span{padding-right:5px}
+#wrapper #container .con_left .tab_con .box .list li .ttitle{color:#000;font-size:1.1em;line-height:1.8em}
+#wrapper #container .con_left .tab_con .box .paging{padding:10px;text-align:center}
+#wrapper #container .con_left .tab_con .box .paging a{padding:0 3px;margin:1px;border:1px solid #e0e0e0;text-decoration:none;vertical-align:middle}
+#wrapper #container .con_left .tab_con .box .paging a:hover{background:#e0e0e0}
+#wrapper #container .con_left .tab_con .box .paging a:active,#wrapper #container .con_left .tab_con .box .list .paging a:visited{color:#666}
+#wrapper #container .con_left .tab_con .box .paging .on{color:#008ac5}
+
+#pagination{margin:10px auto;text-align:center}
+#pagination a{display:inline-block;margin-right:10px}
+#pagination .on{font-weight:700;cursor:default;color:#777}
+.hidden{font-size:0;height:0;line-height:0;overflow:hidden;position:absolute;visibility:hidden;width:0}
+
+
+/* container right */
+#wrapper #container .con_right{width:100%;background:#fff;position:absolute;left:300px;top:71px}
+#wrapper #container .con_right .map{width:100%;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.3) inset;-moz-box-shadow:0 1px 3px rgba(0,0,0,.3) inset;box-shadow:0 1px 3px rgba(0,0,0,.3) inset;position:absolute;left:0;top:0;z-index:9}
+#wrapper #container .con_right .nvmap{width:100%;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.3) inset;-moz-box-shadow:0 1px 3px rgba(0,0,0,.3) inset;box-shadow:0 1px 3px rgba(0,0,0,.3) inset;position:absolute;left:0;top:0;z-index:9}
+#wrapper #container .con_right .menu{position:absolute;top:10px;z-index:200}
+#wrapper #container .con_right .menu ul li{display:inline}
+ #wrapper #container .con_right .menu #maplist{width:50px;padding:3px 0;margin:0 5px 0 0;text-align:center;background:#fff;border:1px solid #196302;font-size:1.2em;float:left;border-radius:3px} */
+
+/* 2016.09.26 시군이동목록 수정 최지훈 */
+/*#wrapper #container .con_right .menu1 #sigunmovelist{width:50px;padding:3px 0;margin:0 5px 0 0;text-align:center;background:#fff;border:1px solid #196302;font-size:1.2em;float:left;border-radius:3px}*/
+#wrapper #container .con_right .menu1 #sigunmovelist{width:50px;padding:3px 0;margin:0 5px 0 0;text-align:center;background:#027eb2;color:#ffffff;border:1px solid #196302;font-size:1.2em;float:left;border-radius:3px}
+#wrapper #container .con_right .menu1 #sigunmovelist.on{background:#027eb2;color:#a4e4ff}
+#wrapper #container .con_right .menu2 {float:left;display:none;width:164px;height:200px;padding:3px 0;margin:0 5px 0 0;text-align:center;font-size:1.2em;float:left;}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist2, .sigunlist4, .sigunlist6, .sigunlist8, .sigunlist10, .sigunlist12, .sigunlist14{float:left;width:79px;text-align:center;background:#fff;border-top:1px solid #BDBDBD;border-left:1px solid #BDBDBD;border-right:1px solid #BDBDBD;font-size:0.9em;float:left;}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist1, .sigunlist3, .sigunlist5, .sigunlist7, .sigunlist9, .sigunlist11, .sigunlist13{float:left;width:79px;text-align:center;background:#fff;border-top:1px solid #BDBDBD;border-left:1px solid #BDBDBD;font-size:0.9em;float:left;}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist13{float:left;width:79px;text-align:center;background:#fff;border-top:1px solid #BDBDBD;border-left:1px solid #BDBDBD;border-bottom:1px solid #BDBDBD;font-size:0.9em;float:left;}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist14{float:left;width:79px;text-align:center;background:#fff;border-top:1px solid #BDBDBD;border-left:1px solid #BDBDBD;border-right:1px solid #BDBDBD;border-bottom:1px solid #BDBDBD;font-size:0.9em;float:left;}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist1.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist2.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist3.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist4.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist5.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist6.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist7.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist8.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist9.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist10.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist11.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist12.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist13.on{background:#027eb2;color:#fcffb8}
+#wrapper #container .con_right .menu2 #sigunlist .sigunlist14.on{background:#027eb2;color:#fcffb8}
+/*end*/
+
+#wrapper #container .con_right .menu #detail,#ilsa{width:92px;height:27px;text-align:center;font-size:1.2em;float:left}
+#wrapper #container .con_right .menu .on{background:#86bd3c;color:#fcffb8}
+#wrapper #container .con_right .menu .on #detail,#ilsa{background:none!important;padding-right:15px;color:#fcffb8}
+#wrapper #container .con_right .scale{background:url(../img/Scale_1.png) 0 0 no-repeat;width:27px;height:127px;position:absolute;top:65px;right:20px;z-index:200}
+#wrapper #container .con_right .scale .plus{position:absolute;left:0;top:-22px}
+#wrapper #container .con_right .scale .pointer{position:absolute;left:7px;top:75.7143px}
+#wrapper #container .con_right .scale .minus{position:absolute;left:0;bottom:24px}
+#wrapper #container .con_right .tool{width:27px;height:192px;position:absolute;top:220px;right:20px;z-index:200}
+#wrapper #container .con_right .sns{width:27px;height:48px;position:absolute;top:395px;right:20px;z-index:200}
+#wrapper #container .con_right .index{width:160px;height:160px;position:absolute;top:45px;right:55px;z-index:999}
+#wrapper #container .con_right .index .btArea{position:absolute;top:-1px;right:-2px;z-index:999}
+#wrapper #container .con_right .index .mapArea{border:1px solid #52545d;background:#fff;width:158px;height:158px;margin-bottom:5px;z-index:999}
+#wrapper #container .con_right .enableLayer{width:160px;height:160px;position:absolute;bottom:-100px;z-index:999}
+#wrapper #container .con_right .enableLayer .title{position:absolute;top:-1px;z-index:999;font:normal 140% "Nanum Gothic","나눔 고딕","맑은 고딕",돋움,dotum;background:#fff;width:160px;height:23px;line-height:23px;border:1px solid #196302;color:#05459D;vertical-align:middle}
+#wrapper #container .con_right .enableLayer .title img{padding-left:5px}
+#wrapper #container .con_right .enableLayer .btArea2{position:absolute;top:-1px;right:-2px;z-index:999}
+#wrapper #container .con_right .enableLayer .enableLayerList{color:chocolate;left:0;top:23px;bottom:0;width:160px;height:168px;position:absolute;background:#fff;border:1px solid #196302;font-size:1.1em;z-index:998;display:inline;-webkit-box-shadow:0 0 8px rgba(0,0,0,.5);-moz-box-shadow:0 0 8px rgba(0,0,0,.5);overflow:hidden;overflow-y:scroll;overflow-x:hidden}
+
+/* container right : GIS분석 */
+#wrapper #container .con_right .gisAna{width:100%;min-width:800px;height:165px;position:absolute;bottom:23px;left:0;background:#fff;color:#000;border-top:1px solid #054AA8;z-index:9999;display:none;}
+#wrapper #container .con_right .gisAna .left{width:87%;height:150px;float:left}
+#wrapper #container .con_right .gisAna .left .gisAna_top{width:100%;background:#f2f2f1;font-size:1.2em;float:left}
+/* 2016.02.03(수) by 송효섭
+// No : 20160203-1
+// 관리자 페이지 기능과 연결하여 GIS 분석 기능 구동
+// width:140 -> 150으로 수정 */
+#wrapper #container .con_right .gisAna .left .gisAna_top select{width:150px;height:20px;border:1px solid #dbdbdb;font:normal 1em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum}
+#wrapper #container .con_right .gisAna .left .gisAna_top .sel_class{margin:10px 0 10px 40px;padding:0 20px 0 0;display:inline-block}
+#wrapper #container .con_right .gisAna .left .gisAna_top .sel_list{margin:10px 0 10px 20px;padding:0 20px 0 0;display:inline-block}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom{width:100%;height:125px;overflow-x:auto;overflow-y:hidden}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom td{width:110px;padding:5px 8px}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom td .title{width:110px;padding:5px 0;font-size:1.1em}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom td .title .check{width:10px;height:25px;padding:5px 0 0;float:left}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom td .title .ctext{width:95px;height:30px;padding:0 0 0 5px;float:left}
+#wrapper #container .con_right .gisAna .left .gisAna_bottom td .title .check input{width:10px;height:10px}
+#wrapper #container .con_right .gisAna .right{width:13%;height:165px;background:#f2f2f1;-webkit-box-shadow:0 0 8px rgba(0,0,0,.5) inset;-moz-box-shadow:0 0 8px rgba(0,0,0,.5) inset;box-shadow:0 0 8px rgba(0,0,0,.5) inset;float:right;position:relative}
+#wrapper #container .con_right .gisAna .right a{width:105px;height:83px;position:absolute;left:50%;top:40px;margin-left:-52px;display:inline-block}
+
+/* container right : 시계열조회 */
+/* #wrapper #container .con_right .timeAna {width:100%;min-width:800px;height:165px;position:absolute;bottom:23px;left:0px;background:#fff;color:#000;border-top:1px solid #054AA8;z-index:9999;display:none;} */
+#wrapper #container .con_right .timeAna {width:100%;min-width:800px;position:absolute;bottom:23px;left:0px;background:#fff;color:#000;border-top:1px solid #054AA8;z-index:9999;display:none;}
+#wrapper #container .con_right .timeAna .timeAna_top {width:100%;background:#f2f2f1;font-size:1.2em;float:left;}
+#wrapper #container .con_right .timeAna .timeAna_top select {width:140px;height:20px;border:1px solid #dbdbdb;font:normal 1em 'Nanum Gothic', '나눔 고딕', '맑은 고딕', '돋움', dotum;}
+#wrapper #container .con_right .timeAna .timeAna_top .sel_class {margin:10px 0 10px 40px;padding:0 20px 0 0;display:inline-block;}
+#wrapper #container .con_right .timeAna .timeAna_top .sel_list {margin:0px 0 0px 20px;padding:0 20px 0 0;display:inline-block;}
+#wrapper #container .con_right .timeAna .timeAna_top .sel_list img {cursor:pointer;}
+
+#wrapper #container .con_right .timeAna .timeAna_bottom {width:100%;height:125px;overflow-x:auto;overflow-y:hidden;float:left;}
+#wrapper #container .con_right .timeAna .timeAna_bottom td {width:110px;padding:5px 10px 11px 10px;border-right:1px solid #f2f2f1;}
+#wrapper #container .con_right .timeAna .timeAna_bottom td .title {width:110px;padding:5px 0;text-align:center;font-size:1.1em;}
+#wrapper #container .con_right .timeAna .timeAna_bottom a {font-size:1em;color:#333;text-decoration:none;}
+#wrapper #container .con_right .timeAna .timeAna_bottom a:hover {font-weight:bold;}
+
+/* footer */
+#wrapper #footer{width:100%;padding:5px 0;text-align:center;background:#054AA8;font-size:1.1em;color:#fff;position:absolute;bottom:0;z-index:999}
+
+/* popup : 토지정보 & 속성정보 */
+/* 2016.01.08(금) by 송효섭 */
+/* No : 20160108-2 */
+/* 토지정보 조회 창 및 속성정보 창의 팝업 위치를 조정함, 원본은 left:50% 이였음*/
+.pop_1{width:650px;position:absolute;left:75%;top:100px;margin-left:-300px;z-index:9999;display:inline;}
+.pop_2{width:400px;position:absolute;left:80%;top:100px;margin-left:-300px;z-index:9999;display:inline;}
+
+.pop_title_property{width:380px;padding:10px 0 10px 20px;margin-top:16px;font-size:1.4em;color:#fff;font-weight:700;background:#686d78;cursor:move;float:left}
+.pop_title_property img{padding-right:15px;cursor:pointer;float:right}
+/* 2016.01.13(수) by 송효섭 */
+/* No : 20160113-1 */
+/* 속성정보 창의 팝업 높이를 내용에 맞게 조정함, 원본은 height:310px 이였음*/
+.pop_box_property{width:400px;height:100%;background:#fff;overflow:hidden;overflow-y:hidden;overflow-x:hidden}
+/* .pop_box_property{width:400px;height:260px;background:#fff;border:1px solid #003884;overflow:hidden;overflow-y:scroll;overflow-x:hidden} */
+.tabli_con_property{width:400px;padding:10px;margin-top:-1px;background:#ebebeb;float:left;border: 1px solid #dcdcdc;}
+.pop_box_property .pop_tab_property{width:350px;margin:10px;font:normal 1.2em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum}
+.property_sub1{width:350px}
+.tabli_con_property table{width:100%;font:normal 1em/1.6em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;border:1px solid #dbdbdb;border-collapse:collapse}
+.tabli_con_property th{width:80px;height:20px;padding:5px;background:#f3f3f3;border:1px solid #dbdbdb;font:normal .9em/1.4em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;color:#333;text-align:left}
+.tabli_con_property th:last-child{border-right:0 solid #333}
+.tabli_con_property td{height:20px;padding:5px;background:#fff;border:1px solid #dbdbdb}
+김우주 수정
+.pop_drag{width:650px;height:100px;cursor:move;}
+
+
+.pop_title{width:630px;padding:10px 0 10px 20px;margin-top:16px;border:1px solid #003884;font-size:1.4em;color:#fff;font-weight:700;background:#054AA8;cursor:move;float:left}
+.pop_title img{width:15px;padding-right:15px;cursor:pointer;float:right}
+.pop_box{width:650px;background:#fff;border:1px solid #003884;overflow:hidden}
+.pop_box .pop_tab_landinfo{width:680px;margin:10px;font:normal 1.2em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum}
+.landinfo_menu li{width:100px;height:22px;padding:10px 0 2px;margin-right:3px;background:#008ac5;color:#fff;cursor:pointer;font:normal 1.1em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;text-align:center;-moz-border-radius:3px;-webkit-border-radius:3px;border-top-right-radius:3px;border-top-left-radius:3px;cursor:pointer;float:left}
+.landinfo_menu .on{background:#ebebeb;color:#054aa8;border:1px solid #ddd;border-bottom:0;font-weight:700}
+.tabli_con{width:610px;padding:10px;margin-top:-1px;margin-bottom:10px;background:#ebebeb;float:left}
+.landinfo_sub2,.landinfo_sub3,.landinfo_sub4,.landinfo_sub5,.landinfo_sub6{display:none}
+.tabli_con table{width:100%;font:normal 1em/1.6em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;border:1px solid #dbdbdb;border-collapse:collapse}
+.tabli_con th{height:20px;padding:5px;background:#f3f3f3;border:1px solid #dbdbdb;font:normal .9em/1.4em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;color:#333}
+.tabli_con th:last-child{border-right:0 solid #333}
+.tabli_con td{height:20px;padding:5px;background:#fff;border:1px solid #dbdbdb}
+.tabli_con_new{width:610px;padding:10px;margin-top:-1px;margin-bottom:10px;background:#ebebeb;float:left}
+.tabli_con_new table{width:100%;font:normal 1em/1.6em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;border:1px solid #dbdbdb;border-collapse:collapse}
+.tabli_con_new th{height:20px;padding:5px;background:#f3f3f3;border:1px solid #dbdbdb;font:normal .9em/1.4em 'Nanum Gothic','나눔 고딕','맑은 고딕',돋움,dotum;color:#333}
+.tabli_con_new th:last-child{border-right:0 solid #333}
+/* 2016.01.11(월) by 송효섭 */
+/* No : 20160111-1 */
+/* 건축물대장 리스트 클릭 시 해당 row 색깔 변경 */
+/* background:#fff; 이 잡고 있어서 색깔 변경이 되지 않았음 - 해당 소스 삭제 */
+.tabli_con_new td{height:20px;padding:5px;border:1px solid #dbdbdb}
+.con_tab{margin-top:20px;float:left}
+.con_tab .table_title{width:100%;padding:10px 0 5px;color:#000;font-weight:700;float:left}
+.con_tab li{width:80px;padding:6px 0;margin:0 1px 5px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;text-align:center;background:#999;color:#fff;cursor:pointer;float:left}
+.con_tab .on{background:#86BD3C}
+.con_tab table{margin-top:0}
+.contab_sub2,.contab_sub3{display:none}
+.tabli_con .imgmap{background:#fff;float:left}
+.tabli_con .imgmap .leftmap{width:340px;float:left}
+.tabli_con .imgmap .leftmap img{width:340px}
+.tabli_con .imgmap .rightlegend{width:200px;float:left;padding-left:10px;padding-top:10px}
+.tabli_con .imgmap .rightlegend img{width:20px;height:20px}
+.tabli_con .table_title2{width:100%;padding:20px 0 10px;color:#000;font-weight:700;float:left}
+
+/* Etc */
+.tar{text-align:right}
+.tac{text-align:center}
+.fs11{font-size:11px}
+.pd0{padding:0}
+.pdr0{padding-right:0}
+.pdr20{padding-right:20px}
+.pdr10{padding-right:10px}
+.mgr0{margin-right:0}
+.mr10{margin-right:10px}
+.mr15{margin-right:15px}
+.bd0{border:0}
+.sq1{width:40px;height:14px;margin:5px 3px 0 0;font-size:.8em;text-align:center;line-height:1.4em;background:#95b767;color:#fff;float:left}
+.sq2{width:40px;height:14px;margin:5px 3px 0 0;font-size:.8em;text-align:center;line-height:1.4em;background:#ee953f;color:#fff;float:left}
+.sq3{width:40px;height:14px;margin:5px 3px 0 0;font-size:.8em;text-align:center;line-height:1.4em;background:#3f9eee;color:#fff;float:left}
+.ip1{width:40px;height:16px;border:1px solid #999;float:left}
+.sl1{width:100px;border:0 solid #000}
+.spn1{padding-top:1px;font-size:1.2em;float:left}
+#p1{font:normal 120% "Nanum Gothic","나눔 고딕","맑은 고딕",돋움,dotum;border-radius:9px;}
