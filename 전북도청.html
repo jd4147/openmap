@@ -2,20 +2,21 @@
 
 
 
+
 <!DOCTYPE html>
 
 <head>
 
 
-<title>유성구 걷기좋은유성지도</title>
+<title>전라북도 공공생활정보지도</title>
 <meta http-equiv="x-ua-compatible" content="IE=edge" />
 
-
+ 
 <!-- 웹 컨텍스트명 -->
 <script type="text/javascript">
 	var contextPath = "";
 </script>
-<script type="text/javascript" src="/js/google-analytics.js"></script>
+<script type="text/javascript" src="/js/google-analytics.js"></script> 
 <!-- CSS 불러오기 -->
 <link type="text/css" href="../css/default.css" rel="stylesheet">
 <link type="text/css" href="../css/bootstrap-slider.min.css" rel="stylesheet">
@@ -157,7 +158,7 @@
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Atom.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WFS.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WMSDescribeLayer.js"></script>
-<script type="text/javascript"
+<script type="text/javascript" 
 
 src="/extLib/openlayers/OpenLayers/Format/WMSDescribeLayer/v1_1.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/GPX.js"></script>
@@ -167,7 +168,7 @@ src="/extLib/openlayers/OpenLayers/Format/WMSDescribeLayer/v1_1.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/Text.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/JSON.js"></script>
 <script type="text/javascript" src="/extLib/openlayers/OpenLayers/Format/WMSCapabilities.js"></script>
-<script type="text/javascript"
+<script type="text/javascript" 
 
 src="/extLib/openlayers/OpenLayers/Format/WMSCapabilities/v1_3_0.js"></script>
 
@@ -260,19 +261,19 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 <!-- <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
 
 <!-- 기상청 -->
-<script type="text/javascript" src="/js/map/weather.js;jsessionid=jmumw8pmi9bsf2bnPJSae9LyX4caNbV2N3TZiSfBqNHkWDs8yr9zd3mFKzugj6Eq.pub_was_servlet_engine6"></script>
+<script type="text/javascript" src="/js/map/weather.js"></script>
 
 <script type="text/javascript">
 
  $(document).ready(function(){
 	testinit();
-});
+});	 
 
 
  	//$(document).ready(sizeContent);
 	//$(window).resize(sizeContent);
 	//$(document).ready(tab_func);
-	//$(document).ready(pop_draggable);
+	//$(document).ready(pop_draggable); 
 	$(document).ready(function() {
 		$('.slider-icon-opacity').slider(); //2018슬라이더
 	});
@@ -280,7 +281,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 
 	$(document).ready(function() {
 		$('#selectlist').selectmenu();
-
+		
 	});
 
 
@@ -295,7 +296,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 	}; */
 
 	$(window).load(function() {
-
+		
 		fn_init();
 	});
 
@@ -314,34 +315,34 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 	{
 		 var browser = navigator.userAgent.toLowerCase();
 		 var text = "";
-
+		 
 		 if ( -1 != browser.indexOf('chrome') ){
-
-			 con_url = "/SGIS.do";
+			 
+			 con_url = "/SGIS.do";   
 	          //con_url = "../Outsidemap/statistics.aspx?tX="+ valX +"&tY="+valY;
 	          popUp = window.open(con_url, '통계자료','toolbar=no,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=870px,height=650px,left=120, right=100');
 	          //popUp = window.open("http://www.naver.com", '통계자료', '_blank','toolbar=no,location=yes,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=800,height=920');
-	          popUp.focus()
-
+	          popUp.focus() 
+			 
 		 }else if(-1 != browser.indexOf('trident')){
-
-			 con_url = "/SGIS.do";
+			 
+			 con_url = "/SGIS.do";   
 	          //con_url = "../Outsidemap/statistics.aspx?tX="+ valX +"&tY="+valY;
 	          popUp = window.open(con_url, '통계자료','toolbar=no,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=870px,height=590px,left=120, right=100');
 	          //popUp = window.open("http://www.naver.com", '통계자료', '_blank','toolbar=no,location=yes,directions=no,status=no,menubar=no,scrollbars=no,resizable=no,copyhistory=no,width=800,height=920');
-	          popUp.focus()
-
+	          popUp.focus() 
+		 		 
 		 }
-
+			  
 	};
-
-
-
+	
+	
+		
 </script>
 
 </head>
 <body>
-
+	
 
 	<div class="map-cnt-body" id="map" style="z-index: 99"></div>
 	<div id="naverMap" class="map" style="width: 100%; height: 100%;"></div>
@@ -355,16 +356,64 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 		<div class="wrap-body-top"
 		style='position: absolute; left: 0; top: 0px; border-right: 1px solid #dcdcdc; width: 100%; z-index: 100000; background:#fff; overflow: hidden;'>
 		<h1>
-			<a href="../"><img src="walkholiclogo.JPG" alt="유성구"> <span>걷기좋은유성지도</span></a>
+			<a href="../"><img src="../img/logo.jpg" alt="정읍시"> <span>공공생활정보지도</span></a>
 		</h1>
+		<div class="top-search">
+			<div class="tab-frm">
+				<fieldset>
+					<legend>검색폼 </legend>
+					<div class="search">
+					<p>
+					
+						<span class="wid-75"> <input placeholder="예) 문화재"
+							type="text" name="q" id="q"
+							onkeypress="if(event.keyCode=='13'){ajax_init();}">
+						</span> <span class="wid-25"> <a class="search-bts full-wid"
+							onclick="ajax_init();"></a>
+						</span> 
+					</p>
+					</div>
+					
+				</fieldset>
+			</div>
+			
 
+		</div>
+
+		<div class="location-top">
+			<ul>
+
+				<li id="nmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(4, 'nmap');">NAVER</span>
+				</li>
+				<li id="dmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(3, 'dmap');">DAUM</span>
+				</li>
+				<li id="vmap" style="display: none;">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="">VWORLD</span>
+				</li>
+				<li id="rmap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(2, 'rmap');">로드뷰</span>
+				</li>
+				<li id="smap">
+					<span class="icon-check-box icon-green-box icon-over-box"
+					onclick="javascript:fn_changeMap(1, 'smap');">항공</span>
+				</li>
+
+			</ul>
+		</div>
+		
 	<ul class="weather-block">
 			<li><div id="weather-info" class="weather-info">
-
+				
 						</div></li>
 		</ul>
 	</div>
-
+	
 
 	<div class="map-body-top">
 		<div class="location-dong"  style="z-index: 9999; ">
@@ -391,7 +440,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 		<div class="map-bottom" style=" z-index: 9999;">
 		<div id="gis-view" style="display: none;">
 			<div class="view-top">
-				<span class="sel_list">공공생활정보지도 목록</span>
+				<span class="sel_list">공공생활정보지도 목록</span> 
 				<select name="" id="gisAna_selList" onchange="changeMapAnalyList(this.value)">
 				</select>
 			</div>
@@ -432,7 +481,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 		</div>
 		<div id="time-view" style="display: none;">
 			<div class="view-top" >
-				<span>목록</span>
+				<span>목록</span> 
 				<select id="time-series-list" name="time_series_list">
 					<option value="">전주시 공시지가</option>
 				</select>
@@ -450,7 +499,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 
 
 			</div>
-
+			
 		<div class="map-menu" id="maplist_menu" style="height: 949px;z-index: 9999;left: 0px;position: absolute;">
 			<ul>
 				<li><a href="#" onclick="javascript:layer_category2('C18', '사회복지', 'menu0');" class="menu-1"><span>사회복지</span></a></li>
@@ -497,9 +546,9 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 			<div class="box" id="box_id"><!-- 공공생활정보지도 검색결과부분 -->
 				<div class="shrs">
 					<div class="stitle" style="padding: 10px 10px 10px 10px; background-color: #f5f5f5;border-bottom: 1px solid #dcdcdc;">
-						<span class="rsnum" id="search_gong_title"></span>
+						<span class="rsnum" id="search_gong_title"></span> 
 					</div>
-					 <div class="rsnum" id="map_rsnum1"></div>
+					 <div class="rsnum" id="map_rsnum1"></div> 
 				</div>
 				<div class="list" id="map_list1">
 				 </div>
@@ -521,7 +570,7 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 								<div class="rsnum" id="poi_rsnum2"></div>
 							</div>
 							<div class="list" id="poi_list2"></div>
-
+							
 							<div id="pagination"></div>
 						</div>
 						<div class="box">
@@ -688,10 +737,10 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 							<td>
 								<select>
 									<option>전체</option>
-								</select>
+								</select>			
 							</td>
 						</tr>
-
+						
 					</tbody>
 				</table>
 				<img src="../img/bt_search_ilsasil.png" id="searchSale" style="margin-left: 60px;margin-left: 60px;cursor: pointer;flat: right;float: right;margin: 5px 5px 5px 5px; cursor: pointer;" alt="검색" onclick="javascript:fn_searchSale();">
@@ -721,19 +770,19 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 			<img src="../img/btn_x1.png" alt="닫기">
 		</p>
 	</div>
-
+	
 	<div class="map-icons" style="z-index: 9999;">
 		<ul>
 			<li><a data-icon="1" onClick="javascript:fn_measureControl('prev');" ><span>이전</span></a></li>
 			<li><a data-icon="2" onClick="javascript:fn_measureControl('next');"><span>이후</span></a></li>
-		    <li><a data-icon="3" onClick="javascript:fn_measureControl('distance');"  ><span>거리</span></a></li>
+		    <li><a data-icon="3" onClick="javascript:fn_measureControl('distance');"  ><span>거리</span></a></li> 
 			<li><a data-icon="4" onClick="javascript:fn_measureControl('area');"><span>면적</span></a></li>
 			<li><a data-icon="5" onClick="javascript:fn_measureControl('initialize');"><span>초기화</span></a></li>
 			<li><a data-icon="6" onClick="javascript:fn_measureControl('print');"><span>인쇄</span></a></li>
 			<li><a data-icon="7" onClick="javascript:fn_measureControl('timeSeries');"><span>시계열조회</span></a></li>
 			<li><a data-icon="8" onClick="javascript:fn_measureControl('gisAnalysis');"><span>GIS분석</span></a></li>
 			<li><a data-icon="9" onClick="javascript:asdasd1();"><span>토지정보</span></a></li>
-
+			
 			<li class="top-line">
 				<div class="zooming-map">
 					<button class="zoom-plus" onclick="javascript:fn_zoomin();">
@@ -746,7 +795,11 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 					</button>
 				</div>
 			</li>
+			
+			<li class="top-line"><a data-icon="10"><span>현재지도목록</span></a>
 
+			</li>
+			
 		</ul>
 	</div>
 <!-- 	<div class="pop-box pop-top pop-box-center pop-box-download">
@@ -761,6 +814,19 @@ consumer_key=ae3fbf999e9746f7ba5b"></script>
 		<div class="progress-img"></div>
 		<h1>잠시 기다려주십시오.</h1>
 	</div> -->
+	<div id="view-group-icons" class="pop-box pop-top pop-box20"data-pop="1" style="display:none">
+		<div class="enableLayer" id="enableLayer">
+			<p class="title">현재지도정보</p>
+			<div class="visible-ttl">
+					<div class="enableLayerList" id="enableLayerList"></div>
+				<p class="close_x2" id="enableLayerOffBt"onclick="javascript:fn_enableLayerClose(); return false;">
+					<img src="../img/btn_x1.png" alt="닫기">
+				</p>
+				<p id="enableLayerOnBt" onclick="javascript:fn_enableLayerOpen(); return false;"></p>
+
+			</div>
+		</div>
+	</div>
 
 		<!-- 속성정보 조회 -->
 		<div class="pop_2" id="attr_info_div" style="display: none;">
